@@ -88,7 +88,7 @@ application.get('/product',(req,res)=>
 })
 
 
-
+ 
 application.get('/help/*',(req,res)=>{
     res.render('404',{
         'errormgs':'This arcticle is not found'

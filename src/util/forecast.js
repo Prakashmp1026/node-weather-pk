@@ -7,7 +7,7 @@ const forecast=(latitude,longitude,callback)=>{
         {
             callback('the connection is poor',undefined)
         }
-        else if(response.body.error)
+        else if(response.body.error) 
         {
             callback('the location cannot be found. please enter the another location',undefined)
         }
