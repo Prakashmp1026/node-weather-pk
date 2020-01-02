@@ -8,6 +8,9 @@ const forecast=require('./util/forecast')
 
 
 const application=express()
+const port=process.env.PORT || 3000
+
+
 application.use(express.static(path.join(__dirname,'../public')))
 // above code call the all the file in public folder 
 
@@ -104,7 +107,7 @@ application.get('*',(req,res)=>
 
 
 
-application.listen(3000,()=>
+application.listen(port,()=>
 {
-    console.log('server 3000 is ready')
+    console.log('server '+port+' is ready')
 })
