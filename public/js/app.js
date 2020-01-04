@@ -6,14 +6,14 @@ const message1=document.querySelector('#message1')
 const message2=document.querySelector('#message2')
 
 weatherForm.addEventListener('submit',(e)=>{
-    e.preventDefault()
+    e.preventDefault()//used to prevent the refresh the page 
     const location=search.value
-    message1.textContent='Loading!!'
+    message1.textContent='Loading...'
     message2.textContent=''
     fetch('/weather?address='+location).then((response)=>{
           response.json().then((s)=>{
               if(s.error){
-                message1.textContent=s.error
+                message1.textContent='error'
               }
               else{  
                 message1.textContent=s.data

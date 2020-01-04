@@ -12,7 +12,8 @@ const forecast=(latitude,longitude,callback)=>{
             callback('the location cannot be found. please enter the another location',undefined)
         }
         else{
-            callback(undefined,response.body.daily.data[0].summary + ' It is currently ' + response.body.currently.temperature + ' degress out. There is a ' + response.body.currently.precipProbability + '% chance of rain.')
+            console.log(response.body.daily.data[0])
+            callback(undefined,response.body.daily.data[0].summary + 'It is currently ' + response.body.currently.temperature + ' degress out. There is a ' + response.body.currently.precipProbability + '% chance of rain. Max-temp is '+response.body.daily.data[0].temperatureHigh+' Min-temp is '+response.body.daily.data[0].temperatureLow)
         }        
     })
 }
